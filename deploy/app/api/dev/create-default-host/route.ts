@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createUser, getUserByEmail, updateUserStatus } from "@/lib/auth";
 
-// One-time helper endpoint to create a default approved user
-// from env vars DEFAULT_HOST_EMAIL and DEFAULT_HOST_PASSWORD.
+// One-time helper endpoint to create the default host user
+// with hardcoded credentials (Anshdeep Rawat, ar1888819@gmail.com, dowhateverpossible1234).
 //
 // This route is gated by the DEFAULT_HOST_SEED_ENABLED env var so it can be
 // safely disabled in production once the user has been created.
@@ -12,15 +12,15 @@ export async function POST(_req: NextRequest) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
 
-  const email = process.env.DEFAULT_HOST_EMAIL;
-  const password = process.env.DEFAULT_HOST_PASSWORD;
-  const name = process.env.DEFAULT_HOST_NAME ?? "Default Host";
+  const email = "ar1888819@gmail.com";
+  const password = "dowhateverpossible1234";
+  const name = "Anshdeep Rawat";
 
   if (!email || !password) {
     return NextResponse.json(
       {
         error:
-          "DEFAULT_HOST_EMAIL and DEFAULT_HOST_PASSWORD must be set when DEFAULT_HOST_SEED_ENABLED=true"
+          "Host credentials not configured"
       },
       { status: 500 }
     );

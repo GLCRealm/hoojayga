@@ -1,6 +1,8 @@
 import { getAllSubjects } from "@/lib/subjects";
 import { listUsers } from "@/lib/auth";
 
+export const dynamic = "force-dynamic";
+
 async function approveOrReject(userId: string, action: "approve" | "reject") {
   "use server";
   await fetch(`${process.env.NEXT_PUBLIC_BASE_URL ?? ""}/api/admin/users`, {

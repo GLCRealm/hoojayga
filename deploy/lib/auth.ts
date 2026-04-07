@@ -115,6 +115,9 @@ export async function deleteUserById(userId: string): Promise<void> {
 }
 
 export async function listUsers(): Promise<User[]> {
+  if (!process.env.MONGODB_URI) {
+    return [];
+  }
   const db = await getDb();
   const users = await db
     .collection<User>("users")

@@ -12,15 +12,15 @@ export async function POST(_req: NextRequest) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
 
-  const email = "ar1888819@gmail.com";
-  const password = "dowhateverpossible1234";
-  const name = "Anshdeep Rawat";
+  const email = process.env.DEFAULT_HOST_EMAIL;
+  const password = process.env.DEFAULT_HOST_PASSWORD;
+  const name = process.env.DEFAULT_HOST_NAME ?? "Default Host";
 
   if (!email || !password) {
     return NextResponse.json(
       {
         error:
-          "Host credentials not configured"
+          "DEFAULT_HOST_EMAIL and DEFAULT_HOST_PASSWORD must be set when DEFAULT_HOST_SEED_ENABLED=true"
       },
       { status: 500 }
     );

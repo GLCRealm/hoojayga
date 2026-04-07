@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @apply bg-neutral-950 text-neutral-100 antialiased;
+}
+
+.card {
+  @apply rounded-xl border border-neutral-800 bg-neutral-900/60 p-6 shadow-sm;
+}
+
+.page-shell {
+  @apply min-h-screen flex items-center justify-center px-4;
+}
+

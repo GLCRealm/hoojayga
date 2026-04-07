@@ -1,0 +1,32 @@
+{
+  "name": "defence-aspirant-platform",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "bcryptjs": "latest",
+    "jsonwebtoken": "latest",
+    "mongodb": "latest",
+    "next": "latest",
+    "next-themes": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "autoprefixer": "^10.4.27",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "postcss": "latest",
+    "tailwindcss": "^3.4.17",
+    "typescript": "latest"
+  }
+}
